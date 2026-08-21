@@ -1,0 +1,379 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>CodeArena | Competitive Programming</title>
+
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+
+    <!-- Navbar -->
+    <header class="navbar">
+
+        <div class="logo">
+            <span>&lt;/&gt;</span> CodeArena
+        </div>
+
+        <nav>
+            <a href="#" class="active">Home</a>
+            <a href="#problems">Problems</a>
+            <a href="#contests">Contests</a>
+            <a href="#leaderboard">Leaderboard</a>
+        </nav>
+
+        <div class="nav-buttons">
+            <button class="login-btn" onclick="openLogin()">Login</button>
+            <button class="signup-btn" onclick="openSignup()">Sign Up</button>
+        </div>
+
+        <button class="menu-btn" onclick="toggleMenu()">☰</button>
+
+    </header>
+
+
+    <!-- Mobile Menu -->
+    <div class="mobile-menu" id="mobileMenu">
+        <a href="#">Home</a>
+        <a href="#problems">Problems</a>
+        <a href="#contests">Contests</a>
+        <a href="#leaderboard">Leaderboard</a>
+        <button onclick="openLogin()">Login</button>
+    </div>
+
+
+    <!-- Hero Section -->
+    <section class="hero">
+
+        <div class="hero-content">
+
+            <div class="badge">
+                ⚡ Level Up Your Coding Skills
+            </div>
+
+            <h1>
+                Practice.
+                <span>Compete.</span>
+                <br>
+                Become Better.
+            </h1>
+
+            <p>
+                Solve coding problems, participate in contests,
+                track your progress and improve your programming skills.
+            </p>
+
+            <div class="hero-buttons">
+
+                <button class="primary-btn" onclick="goToProblems()">
+                    Start Coding →
+                </button>
+
+                <button class="secondary-btn" onclick="showDemo()">
+                    Explore Problems
+                </button>
+
+            </div>
+
+        </div>
+
+        <!-- Code Preview -->
+        <div class="code-card">
+
+            <div class="code-header">
+                <div class="dots">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+
+                <p>solution.py</p>
+            </div>
+
+            <pre><code><span class="keyword">def</span> <span class="function">twoSum</span>(nums, target):
+
+    seen = {}
+
+    <span class="keyword">for</span> i, num <span class="keyword">in</span> enumerate(nums):
+
+        complement = target - num
+
+        <span class="keyword">if</span> complement <span class="keyword">in</span> seen:
+            <span class="keyword">return</span> [seen[complement], i]
+
+        seen[num] = i
+
+    <span class="keyword">return</span> []</code></pre>
+
+            <div class="accepted">
+                ✓ Accepted
+                <span>Runtime: 42 ms</span>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Statistics -->
+    <section class="stats">
+
+        <div class="stat-card">
+            <h2>500+</h2>
+            <p>Coding Problems</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>10K+</h2>
+            <p>Active Users</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>50+</h2>
+            <p>Contests</p>
+        </div>
+
+        <div class="stat-card">
+            <h2>100K+</h2>
+            <p>Submissions</p>
+        </div>
+
+    </section>
+
+
+    <!-- Problems Section -->
+    <section class="section" id="problems">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">PRACTICE</p>
+                <h2>Featured Problems</h2>
+            </div>
+
+            <button onclick="showAllProblems()">
+                View All →
+            </button>
+
+        </div>
+
+
+        <div class="problem-grid">
+
+            <div class="problem-card">
+
+                <div class="problem-top">
+                    <span class="problem-number">#001</span>
+                    <span class="easy">Easy</span>
+                </div>
+
+                <h3>Two Sum</h3>
+
+                <p>
+                    Find two numbers in an array that add up to a target value.
+                </p>
+
+                <div class="tags">
+                    <span>Array</span>
+                    <span>Hash Table</span>
+                </div>
+
+            </div>
+
+
+            <div class="problem-card">
+
+                <div class="problem-top">
+                    <span class="problem-number">#002</span>
+                    <span class="medium">Medium</span>
+                </div>
+
+                <h3>Longest Substring</h3>
+
+                <p>
+                    Find the longest substring without repeating characters.
+                </p>
+
+                <div class="tags">
+                    <span>String</span>
+                    <span>Sliding Window</span>
+                </div>
+
+            </div>
+
+
+            <div class="problem-card">
+
+                <div class="problem-top">
+                    <span class="problem-number">#003</span>
+                    <span class="hard">Hard</span>
+                </div>
+
+                <h3>Merge K Sorted Lists</h3>
+
+                <p>
+                    Merge multiple sorted linked lists into one sorted list.
+                </p>
+
+                <div class="tags">
+                    <span>Linked List</span>
+                    <span>Heap</span>
+                </div>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Contests -->
+    <section class="section contests" id="contests">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">COMPETE</p>
+                <h2>Upcoming Contest</h2>
+            </div>
+
+        </div>
+
+        <div class="contest-card">
+
+            <div>
+                <span class="live">UPCOMING</span>
+
+                <h3>CodeArena Weekly Challenge</h3>
+
+                <p>
+                    Test your problem-solving skills against other developers.
+                </p>
+            </div>
+
+            <div class="contest-info">
+
+                <div>
+                    <strong>02</strong>
+                    <small>Days</small>
+                </div>
+
+                <div>
+                    <strong>14</strong>
+                    <small>Hours</small>
+                </div>
+
+                <div>
+                    <strong>32</strong>
+                    <small>Minutes</small>
+                </div>
+
+                <button onclick="joinContest()">
+                    View Contest
+                </button>
+
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- Leaderboard -->
+    <section class="section" id="leaderboard">
+
+        <div class="section-heading">
+
+            <div>
+                <p class="small-title">RANKINGS</p>
+                <h2>Top Coders</h2>
+            </div>
+
+        </div>
+
+        <div class="leaderboard">
+
+            <div class="rank first">
+                <span>#1</span>
+                <strong>Alex Kumar</strong>
+                <b>2450</b>
+            </div>
+
+            <div class="rank">
+                <span>#2</span>
+                <strong>Rahul Sharma</strong>
+                <b>2310</b>
+            </div>
+
+            <div class="rank">
+                <span>#3</span>
+                <strong>Priya Patel</strong>
+                <b>2240</b>
+            </div>
+
+        </div>
+
+    </section>
+
+
+    <!-- CTA -->
+    <section class="cta">
+
+        <h2>Ready to become a better programmer?</h2>
+
+        <p>
+            Start solving problems and build your coding skills today.
+        </p>
+
+        <button onclick="goToProblems()">
+            Start Coding →
+        </button>
+
+    </section>
+
+
+    <!-- Footer -->
+    <footer>
+
+        <div class="footer-logo">
+            <span>&lt;/&gt;</span> CodeArena
+        </div>
+
+        <p>
+            © 2026 CodeArena. Built for competitive programmers.
+        </p>
+
+    </footer>
+
+
+    <!-- Login Modal -->
+    <div class="modal" id="loginModal">
+
+        <div class="modal-box">
+
+            <button class="close" onclick="closeModals()">×</button>
+
+            <h2>Welcome Back</h2>
+
+            <p>Login to continue coding.</p>
+
+            <input type="email" placeholder="Email">
+            <input type="password" placeholder="Password">
+
+            <button class="modal-btn">
+                Login
+            </button>
+
+        </div>
+
+    </div>
+
+
+    <!-- JavaScript -->
+    <script src="script.js"></script>
+
+</body>
+</html>
